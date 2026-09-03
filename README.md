@@ -1,7 +1,6 @@
 <div align="center">
 
 # sovereign-systolic
-
 **16×16 Systolic Array · 4-bit Tensor ISA · Microcode Controller · Tensor Core · Path to GDSII**
 
 [![License: Sovereign](https://img.shields.io/badge/License-Sovereign%20v1.0-blue.svg)](LICENSE)
