@@ -1,0 +1,20 @@
+# synth_tensor_array.ys — Yosys synthesis for sovereign-systolic
+# Usage: yosys -s synth_tensor_array.ys
+
+read_verilog -sv rtl/tensor_pkg.sv
+read_verilog -sv rtl/systolic_pe.sv
+read_verilog -sv rtl/array_controller.sv
+read_verilog -sv rtl/tensor_core_fp16.sv
+read_verilog -sv rtl/systolic_array_16x16.sv
+read_verilog -sv rtl/systolic_array_with_tensor_core.sv
+
+hierarchy -top systolic_array_16x16
+
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+abc -liberty sky130_fd_sc_hd.lib
+clean
+
+write_verilog synth/synth_array.v
+write_json synth/synth_array.json
+stat

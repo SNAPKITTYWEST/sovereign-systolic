@@ -1,0 +1,18 @@
+{
+  "DESIGN_NAME": "systolic_array_16x16",
+  "VERILOG_FILES": ["rtl/tensor_pkg.sv", "rtl/systolic_pe.sv", "rtl/array_controller.sv", "rtl/tensor_core_fp16.sv", "rtl/systolic_array_16x16.sv"],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10.0,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 1200 1200",
+  "CORE_AREA": "10 10 1190 1190",
+  "FP_CORE_UTIL": 45,
+  "PL_TARGET_DENSITY": 0.40,
+  "FP_PDN_VOFFSET": 20,
+  "FP_PDN_HOFFSET": 20,
+  "FP_PDN_VWIDTH": 3.0,
+  "FP_PDN_HWIDTH": 3.0,
+  "RT_MAX_LAYER": "met5",
+  "RUN_MAGIC": 1,
+  "RUN_KLAYOUT": 1
+}
