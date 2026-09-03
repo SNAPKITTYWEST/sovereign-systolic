@@ -15,31 +15,6 @@ Sovereign hardware tensor processor: 256 processing elements, microcode-driven F
 
 </div>
 
----
-
-## Architecture
-
-```mermaid
-graph TB
-    subgraph "sovereign-systolic"
-        MC[Microcode ROM<br/>512+ entries] --> FSM[Array Controller<br/>FSM]
-        FSM -->|ctrl[7:0]| PE00[PE 0,0]
-        FSM -->|ctrl[7:0]| PE01[PE 0,1]
-        FSM -->|ctrl[7:0]| PE10[PE 1,0]
-        FSM -->|ctrl[7:0]| PE11[PE 1,1]
-        PE00 -->|psum| PE01
-        PE10 -->|psum| PE11
-        PE00 -->|psum| PE10
-        PE01 -->|psum| PE11
-    end
-
-    ACT[Activation Stream] -->|act_in[15:0]| PE00
-    ACT -->|act_in[15:0]| PE10
-    WGT[Weight Stream] -->|wgt_in[15:0]| PE00
-    WGT -->|wgt_in[15:0]| PE01
-    PE11 -->|result| OUT[Output]
-```
-
 ## Dataflow
 
 ```mermaid
